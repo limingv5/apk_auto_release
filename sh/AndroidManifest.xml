@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.nmi.__BContapk__"
+	android:versionCode="1" android:versionName="1.0"
+>
+
+	<uses-sdk android:minSdkVersion="10" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<supports-screens 
+		android:smallScreens="true" android:normalScreens="true" android:largeScreens="true"
+		android:anyDensity="true"
+	/>
+
+	<application
+		android:icon="@drawable/ic_launcher" android:label="@string/app_name"
+		android:theme="@android:style/Theme.NoTitleBar"
+	>
+
+		<activity
+			android:name=".__BContActivity__Activity"
+			android:configChanges="orientation|keyboardHidden|navigation"
+			android:screenOrientation="sensor"
+		>
+			<intent-filter >
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+        
+		<activity android:name=".PopupMenu" android:theme="@style/MyDialogStyleBottom" />
+		
+		<provider
+			android:name=".LocalFileContentProvider"
+			android:authorities="ui.localfile"
+		/>
+
+	</application>
+
+</manifest>
