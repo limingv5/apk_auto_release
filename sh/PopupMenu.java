@@ -23,11 +23,11 @@ public class PopupMenu extends Activity {
 		
 		ListView listview = (ListView)findViewById(R.id.lv);
 		
-		ArrayList data = new ArrayList();
+		ArrayList<String> data = new ArrayList<String>();
         data.add("关于");
         data.add("退出");
 		
-		ArrayAdapter aadr = new ArrayAdapter(this, R.layout.text, data);
+		ArrayAdapter<String> aadr = new ArrayAdapter<String>(this, R.layout.text, data);
 		
 		listview.setAdapter(aadr);
 		
