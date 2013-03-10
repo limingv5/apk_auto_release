@@ -46,6 +46,7 @@ public class __BContActivity__Activity extends Activity {
 	private WebView wv;
 	private ProgressDialog pd;
 	private Timer timer;
+	private Thread thread;
 	private Handler handler = new Handler() {
 		@Override
 		public void handleMessage(Message msg) {
@@ -231,7 +232,7 @@ public class __BContActivity__Activity extends Activity {
 			}
 		});
 		
-		new Thread(new Runnable() {
+		thread = new Thread(new Runnable() {
 			@Override
 			public void run() {
 				handler.sendEmptyMessage(1);
@@ -257,7 +258,9 @@ public class __BContActivity__Activity extends Activity {
 					handler.sendEmptyMessage(-1);
 				}
 			}
-		}).start();
+		});
+		
+		thread.start();
 	}
 
 	@Override
@@ -290,6 +293,7 @@ public class __BContActivity__Activity extends Activity {
 		ad.setPositiveButton("是", new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int i) {
+				thread.interrupt();
 				__BContActivity__Activity.this.finish();
 			}
 		});
