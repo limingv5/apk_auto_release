@@ -84,8 +84,8 @@ public class __BContActivity__Activity extends Activity {
 		wv.getSettings().setPluginsEnabled(true);
 		wv.getSettings().setAllowFileAccess(true);
 		wv.getSettings().setUseWideViewPort(true);
-        wv.getSettings().setLoadWithOverviewMode(true);
-        wv.getSettings().setDefaultTextEncodingName("utf-8");
+		wv.getSettings().setLoadWithOverviewMode(true);
+		wv.getSettings().setDefaultTextEncodingName("utf-8");
 		
 		wv.requestFocus(View.FOCUS_DOWN);
 
